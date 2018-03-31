@@ -36,7 +36,7 @@ namespace OgreSkeletonUtil
             Writer writer = new Writer();
             foreach (Skeleton single in seperated)
             {
-                writer.Write(single, path);
+                writer.Write(single, $"{path}\\animations");
             }
 
             Console.WriteLine("Finished writing skeleton xml. Press any key to exit.");
