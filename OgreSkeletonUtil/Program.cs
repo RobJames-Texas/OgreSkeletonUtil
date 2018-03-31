@@ -29,8 +29,8 @@ namespace OgreSkeletonUtil
 
             Skeleton[] seperated = Splitter.Split(skeleton).ToArray();
 
-            Console.WriteLine($"Skelton count: {seperated.Count()}");
-            Console.WriteLine("Press any key to write a seperate skeleton xml for each animation.");
+            Console.WriteLine($"Skeleton count: {seperated.Count()}");
+            Console.WriteLine("Press any key to write a separate skeleton xml for each animation.");
             Console.ReadKey();
 
             Writer writer = new Writer();
