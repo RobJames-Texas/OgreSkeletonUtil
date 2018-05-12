@@ -4,10 +4,11 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <Copyright>Rob James</Copyright>
-    <PackageProjectUrl>https://github.com/Vkoslak/OgreSkeletonUtil</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Vkoslak/OgreSkeletonUtil</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/RobJames-Texas/OgreSkeletonUtil</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RobJames-Texas/OgreSkeletonUtil</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <Description>Splits the xml from an Ogre3d skeleton with multiple animations in it into individual skeleton files. One for each animation.</Description>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>
