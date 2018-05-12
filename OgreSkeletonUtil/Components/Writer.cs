@@ -33,7 +33,14 @@ namespace OgreSkeletonUtil.Components
         {
             string name = skeleton.Animations.Single().Name.ToUpper();
 
+            if (name.IndexOfAny(System.IO.Path.GetInvalidPathChars()) >= 0)
+            {
+                throw new ArgumentException($"Invalid characters in animation name. {name}\nThe name must be able to be used in the file name. Please correct the name and try again.");
+            }
+
             string filename = $"{path}\\{name}.{extension}.xml";
+
+            (new FileInfo(filename)).Directory.Create();
 
             Console.WriteLine($"Writing {filename}");
             using (TextWriter writer = new StreamWriter(filename))

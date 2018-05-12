@@ -13,7 +13,7 @@ namespace OgreSkeletonUtil
         {
             string filename = args.FirstOrDefault();
 
-            if (!File.Exists(args[0]))
+            if (!File.Exists(filename))
             {
                 Console.WriteLine("\n\nFile does not exist.\n\nThe only command line argument must be the skeleton xml to convert\n\n Press any key to exit.\n\n");
                 Console.ReadKey();
@@ -34,10 +34,21 @@ namespace OgreSkeletonUtil
             Console.ReadKey();
 
             Writer writer = new Writer();
-            foreach (Skeleton single in seperated)
+            try
             {
-                writer.Write(single, $"{path}\\animations");
+                foreach (Skeleton single in seperated)
+                {
+                    writer.Write(single, $"{path}\\animations");
+                }
             }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine("ERROR!!!\n");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("\nPress any key to exit.");
+                Console.ReadKey();
+                return;
+            } 
 
             Console.WriteLine("Finished writing skeleton xml. Press any key to exit.");
             Console.ReadKey();
