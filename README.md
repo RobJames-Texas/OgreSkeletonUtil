@@ -4,6 +4,10 @@ Splits animations in a single Ogre3d Skeleton xml file into individual xml files
 
 I was adding a new 3d model to the Torchlight2 game, that uses the Ogre3d engine, using Blender and the OGRECave/blender2ogre plugin.  It exports all the animations into one big skeleton file but Torchlight2 needed the animations in separate files. I wrote this utility to do the conversion for me.
 
+v1.1.1
+
+Bugfixes: Fixed serialization. Ogre command line tools uses floats for vector properties. Now we can properly serialize scientific notation used in vectors.  Updated builds to no longer include folders.
+
 v1.1.0
 
 Bugfixes: Fixed argument out of range exception when starting application with no arguments. Fixed creating animations folder if it does not exist.  Adding checking for invalid characters in the file name used for the individual animations.
