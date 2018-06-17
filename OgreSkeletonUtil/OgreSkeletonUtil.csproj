@@ -8,7 +8,9 @@
     <RepositoryUrl>https://github.com/RobJames-Texas/OgreSkeletonUtil</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <Description>Splits the xml from an Ogre3d skeleton with multiple animations in it into individual skeleton files. One for each animation.</Description>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
+    <PackageReleaseNotes>Scientific notion can now be parsed for vector.
+Updated build script.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>

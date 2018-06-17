@@ -7,12 +7,12 @@ namespace OgreSkeletonUtil.Model
     public class Vector
     {
         [XmlAttribute("x")]
-        public decimal X { get; set; }
+        public float X { get; set; }
 
         [XmlAttribute("y")]
-        public decimal Y { get; set; }
+        public float Y { get; set; }
 
         [XmlAttribute("z")]
-        public decimal Z { get; set; }
+        public float Z { get; set; }
     }
 }
