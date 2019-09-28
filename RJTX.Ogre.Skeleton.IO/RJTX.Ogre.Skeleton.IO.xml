@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RJTX.Ogre.Skeleton.IO</name>
+    </assembly>
+    <members>
+        <member name="T:RJTX.Ogre.Skeleton.IO.Components.Loader">
+            <summary>
+            An implementation of <see cref="T:RJTX.Ogre.Skeleton.IO.Interfaces.ISkeletonLoader"/> for loadking <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> objects from Ogre XML.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.Skeleton.IO.Components.Loader.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:RJTX.Ogre.Skeleton.IO.Components.Loader"/>.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.Skeleton.IO.Components.Loader.Load(System.String)">
+            <summary>
+            Load a <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> from the given file path.
+            </summary>
+            <param name="filename">The path to the xml file containing the skeleton xml.</param>
+        </member>
+        <member name="T:RJTX.Ogre.Skeleton.IO.Components.Splitter">
+            <summary>
+            Class used to split <see cref="T:RJTX.Ogre.Skeleton.Models.Animation"/> objects on a single <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> object.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.Skeleton.IO.Components.Splitter.Split(RJTX.Ogre.Skeleton.Models.Skeleton)">
+            <summary>
+            Method to take a <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> object with multiple <see cref="T:RJTX.Ogre.Skeleton.Models.Animation"/> objects and create new <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> objects with only one <see cref="T:RJTX.Ogre.Skeleton.Models.Animation"/> object.
+            </summary>
+            <param name="combined">The <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> object to split animations from.</param>
+            <returns><see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> object with only one animation.</returns>
+        </member>
+        <member name="T:RJTX.Ogre.Skeleton.IO.Components.Writer">
+            <summary>
+            An implementation of <see cref="T:RJTX.Ogre.Skeleton.IO.Interfaces.ISkeletonWriter"/> for writing <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> objects to Ogre XML.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.Skeleton.IO.Components.Writer.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:RJTX.Ogre.Skeleton.IO.Components.Writer"/>.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.Skeleton.IO.Components.Writer.Write(RJTX.Ogre.Skeleton.Models.Skeleton,System.String)">
+            <summary>
+            Write the given <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> to the given file path.
+            </summary>
+        </member>
+        <member name="T:RJTX.Ogre.Skeleton.IO.Interfaces.ISkeletonLoader">
+            <summary>
+            Allows object to handle loading <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> objects.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.Skeleton.IO.Interfaces.ISkeletonLoader.Load(System.String)">
+            <summary>
+            Load a <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> from the given file path.
+            </summary>
+        </member>
+        <member name="T:RJTX.Ogre.Skeleton.IO.Interfaces.ISkeletonWriter">
+            <summary>
+            Allows an object to handle writing <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> objects.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.Skeleton.IO.Interfaces.ISkeletonWriter.Write(RJTX.Ogre.Skeleton.Models.Skeleton,System.String)">
+            <summary>
+            Write the given <see cref="T:RJTX.Ogre.Skeleton.Models.Skeleton"/> to the given file path.
+            </summary>
+        </member>
+    </members>
+</doc>

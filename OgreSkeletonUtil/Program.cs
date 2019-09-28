@@ -1,5 +1,5 @@
-﻿using OgreSkeletonUtil.Components;
-using OgreSkeletonUtil.Model;
+﻿using RJTX.Ogre.Skeleton.IO.Components;
+using RJTX.Ogre.Skeleton.Models;
 using System;
 using System.IO;
 using System.Linq;

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\User\source\repos\Ogre3dSkeletonUtil\RJTX.Ogre.Skeleton.IO\RJTX.Ogre.Skeleton.IO.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RJTX.Ogre.Skeleton.Models\RJTX.Ogre.Skeleton.Models.csproj" />
+  </ItemGroup>
+
+</Project>
