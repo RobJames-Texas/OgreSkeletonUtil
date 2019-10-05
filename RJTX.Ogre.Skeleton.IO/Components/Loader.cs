@@ -4,6 +4,7 @@
     using RJTX.Ogre.Skeleton.Models;
     using System;
     using System.IO;
+    using System.Xml;
     using System.Xml.Serialization;
 
     /// <summary>
@@ -42,7 +43,9 @@
             Skeleton skeleton = null;
             using (FileStream fs = new FileStream(filename, FileMode.Open))
             {
-                skeleton = (Skeleton)_serializer.Deserialize(fs);
+                XmlReader reader = new XmlTextReader(fs);
+                if (_serializer.CanDeserialize(reader))
+                skeleton = (Skeleton)_serializer.Deserialize(reader);
             }
             return skeleton;
         }
