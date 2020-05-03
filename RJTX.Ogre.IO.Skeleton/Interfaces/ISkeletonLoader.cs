@@ -1,6 +1,6 @@
-﻿namespace RJTX.Ogre.Skeleton.IO.Interfaces
+﻿namespace RJTX.Ogre.IO.Skeleton.Interfaces
 {
-    using RJTX.Ogre.Skeleton.Models;
+    using RJTX.Ogre.Models.Skeleton;
 
     /// <summary>
     /// Allows object to handle loading <see cref="Skeleton"/> objects.

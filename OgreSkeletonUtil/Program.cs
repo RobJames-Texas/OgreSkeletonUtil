@@ -1,5 +1,5 @@
-﻿using RJTX.Ogre.Skeleton.IO.Components;
-using RJTX.Ogre.Skeleton.Models;
+﻿using RJTX.Ogre.IO.Skeleton.Components;
+using RJTX.Ogre.Models.Skeleton;
 using System;
 using System.IO;
 using System.Linq;

@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\User\source\repos\Ogre3dSkeletonUtil\RJTX.Ogre.Skeleton.IO\RJTX.Ogre.Skeleton.IO.xml</DocumentationFile>
+    <DocumentationFile>RJTX.Ogre.IO.Skeleton.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RJTX.Ogre.Skeleton.Models\RJTX.Ogre.Skeleton.Models.csproj" />
+    <ProjectReference Include="..\RJTX.Ogre.Models\RJTX.Ogre.Models.csproj" />
   </ItemGroup>
 
 </Project>

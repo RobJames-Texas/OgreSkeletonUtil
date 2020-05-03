@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -14,8 +14,8 @@ Updated build script.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RJTX.Ogre.Skeleton.IO\RJTX.Ogre.Skeleton.IO.csproj" />
-    <ProjectReference Include="..\RJTX.Ogre.Skeleton.Models\RJTX.Ogre.Skeleton.Models.csproj" />
+    <ProjectReference Include="..\RJTX.Ogre.IO.Skeleton\RJTX.Ogre.IO.Skeleton.csproj" />
+    <ProjectReference Include="..\RJTX.Ogre.Models\RJTX.Ogre.Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace RJTX.Ogre.Skeleton.Models
+namespace RJTX.Ogre.Models.Skeleton
 {
     [Serializable]
     public class Rotation

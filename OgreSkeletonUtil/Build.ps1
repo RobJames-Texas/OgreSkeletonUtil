@@ -4,13 +4,13 @@ dotnet build -r osx.10.10-x64
 
 Start-Sleep -Seconds 1
 
-dotnet publish -c release -r win10-x64
-dotnet publish -c release -r win10-x86
-dotnet publish -c release -r osx.10.10-x64
+dotnet publish -c release -r win10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+dotnet publish -c release -r win10-x86 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+dotnet publish -c release -r osx.10.10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true 
 
 Start-Sleep -Seconds 1
 
-$strPath = Resolve-Path -Path '.\bin\debug\netcoreapp2.0\OgreSkeletonUtil.dll'
+$strPath = Resolve-Path -Path '.\bin\debug\netcoreapp3.0\OgreSkeletonUtil.dll'
 $Assembly = [Reflection.Assembly]::Loadfile($strPath)
 
 $AssemblyName = $Assembly.GetName()
@@ -20,7 +20,7 @@ $NameAndVersion = ($AssemblyName.name + '_v' + $Assemblyversion)
 
 $Current = Resolve-Path -Path '.\'
 $Destination = ($Current.ToString() + '\Artifacts')
-$ReleasePath = Resolve-Path -Path '.\bin\release\netcoreapp2.0'
+$ReleasePath = Resolve-Path -Path '.\bin\release\netcoreapp3.0'
 
 New-Item -ItemType Directory -Force -Path $Destination
 

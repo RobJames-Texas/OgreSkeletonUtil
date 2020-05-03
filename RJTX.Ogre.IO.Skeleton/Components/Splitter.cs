@@ -1,6 +1,6 @@
-﻿namespace RJTX.Ogre.Skeleton.IO.Components
+﻿namespace RJTX.Ogre.IO.Skeleton.Components
 {
-    using RJTX.Ogre.Skeleton.Models;
+    using RJTX.Ogre.Models.Skeleton;
     using System.Collections.Generic;
 
     /// <summary>
