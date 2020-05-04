@@ -1,14 +1,22 @@
-﻿using OgreSkeletonUtil.Model;
-using System;
-using System.IO;
-using System.Xml.Serialization;
-
-namespace OgreSkeletonUtil.Components
+﻿namespace RJTX.Ogre.IO.Skeleton.Components
 {
-    public class Loader
+    using RJTX.Ogre.IO.Skeleton.Interfaces;
+    using RJTX.Ogre.Models.Skeleton;
+    using System;
+    using System.IO;
+    using System.Xml;
+    using System.Xml.Serialization;
+
+    /// <summary>
+    /// An implementation of <see cref="ISkeletonLoader"/> for loadking <see cref="Skeleton"/> objects from Ogre XML.
+    /// </summary>
+    public class Loader : ISkeletonLoader
     {
         private XmlSerializer _serializer;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="Loader"/>.
+        /// </summary>
         public Loader()
         {
             XmlRootAttribute xRoot = new XmlRootAttribute();
@@ -26,23 +34,29 @@ namespace OgreSkeletonUtil.Components
             XmlAttributeEventHandler(serializer_UnknownAttribute);
         }
 
+        /// <summary>
+        /// Load a <see cref="Skeleton"/> from the given file path.
+        /// </summary>
+        /// <param name="filename">The path to the xml file containing the skeleton xml.</param>
         public Skeleton Load(string filename)
         {
             Skeleton skeleton = null;
             using (FileStream fs = new FileStream(filename, FileMode.Open))
             {
-                skeleton = (Skeleton)_serializer.Deserialize(fs);
+                XmlReader reader = new XmlTextReader(fs);
+                if (_serializer.CanDeserialize(reader))
+                skeleton = (Skeleton)_serializer.Deserialize(reader);
             }
             return skeleton;
         }
 
-        protected void serializer_UnknownNode
+        private void serializer_UnknownNode
         (object sender, XmlNodeEventArgs e)
         {
             Console.WriteLine("Unknown Node:" + e.Name + "\t" + e.Text);
         }
 
-        protected void serializer_UnknownAttribute
+        private void serializer_UnknownAttribute
         (object sender, XmlAttributeEventArgs e)
         {
             System.Xml.XmlAttribute attr = e.Attr;

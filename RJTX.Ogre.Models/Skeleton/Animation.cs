@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace OgreSkeletonUtil.Model
+namespace RJTX.Ogre.Models.Skeleton
 {
     [Serializable]
     public class Animation
