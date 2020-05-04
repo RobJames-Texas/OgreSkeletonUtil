@@ -1,0 +1,76 @@
+name: CD
+
+on:
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+  create-release:
+    name: Create GitHub Release
+    runs-on: windows-latest
+    
+    steps:
+    - name: Install 7Zip PowerShell Module
+      shell: powershell
+      run: Install-Module 7Zip4PowerShell -Force -Verbose
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+    - name: Install dependencies
+      run: dotnet restore
+    - name: PublishMeshToolWinX64
+      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r win10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+    - name: PublishSkeletonToolWinX64
+      run: dotnet publish OgreSkeletonUtil -c release -r win10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+    - name: PublishMeshToolWinX86
+      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r win10-x86 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+    - name: PublishSkeletonToolWinX86
+      run: dotnet publish OgreSkeletonUtil -c release -r win10-x86 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+    - name: PublishMeshToolOSX
+      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r osx.10.10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
+    - name: PublishSkeletonToolOSX
+      run: dotnet publish OgreSkeletonUtil -c release -r osx.10.10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
+    - name: Build Artifact
+      shell: powershell
+      run: call .\ArtifactBuild.ps1
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: Automated Release by GitHub Action CD
+        draft: true
+        prerelase: true
+    - name: Upload Release Asset (x64)
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: .\Artifacts\RJTX-Ogre-Tools-x64.zip
+        asset_name: RJTX-Ogre-Tools-x64.zip
+        asset_content_type: application/zip
+    - name: Upload Release Asset (x86)
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: .\Artifacts\RJTX-Ogre-Tools-x86.zip
+        asset_name: RJTX-Ogre-Tools-x86.zip
+        asset_content_type: application/zip
+    - name: Upload Release Asset (osx)
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: .\Artifacts\RJTX-Ogre-Tools-osx.zip
+        asset_name: RJTX-Ogre-Tools-osx.zip
+        asset_content_type: application/zip
