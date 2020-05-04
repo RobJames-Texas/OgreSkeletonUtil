@@ -35,7 +35,7 @@ jobs:
       run: dotnet publish OgreSkeletonUtil -c release -r osx.10.10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
     - name: Build Artifact
       shell: powershell
-      run: call .\ArtifactBuild.ps1
+      run: .\ArtifactBuild.ps1
     - name: Create Release
       id: create_release
       uses: actions/create-release@latest
