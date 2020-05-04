@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RJTX.Ogre.Models", "RJTX.Og
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RJTX.Ogre.IO.Skeleton", "RJTX.Ogre.IO.Skeleton\RJTX.Ogre.IO.Skeleton.csproj", "{627D9B3D-E96C-4EB3-B327-324B41417A6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RJTX.Ogre.IO.Mesh", "RJTX.Ogre.IO.Mesh\RJTX.Ogre.IO.Mesh.csproj", "{FE6F95A4-5A21-428F-AF4A-401C4FCEF904}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgreXMLConvertToDedicatedVerticies", "OgreXMLConvertToDedicatedVerticies\OgreXMLConvertToDedicatedVerticies.csproj", "{B9DC63F3-4F16-44C3-9B1A-45F257DC9297}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{627D9B3D-E96C-4EB3-B327-324B41417A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{627D9B3D-E96C-4EB3-B327-324B41417A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{627D9B3D-E96C-4EB3-B327-324B41417A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6F95A4-5A21-428F-AF4A-401C4FCEF904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6F95A4-5A21-428F-AF4A-401C4FCEF904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6F95A4-5A21-428F-AF4A-401C4FCEF904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6F95A4-5A21-428F-AF4A-401C4FCEF904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9DC63F3-4F16-44C3-9B1A-45F257DC9297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DC63F3-4F16-44C3-9B1A-45F257DC9297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DC63F3-4F16-44C3-9B1A-45F257DC9297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DC63F3-4F16-44C3-9B1A-45F257DC9297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

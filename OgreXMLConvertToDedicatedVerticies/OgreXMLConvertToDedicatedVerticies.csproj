@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RJTX.Ogre.IO.Mesh\RJTX.Ogre.IO.Mesh.csproj" />
+    <ProjectReference Include="..\RJTX.Ogre.Models\RJTX.Ogre.Models.csproj" />
+  </ItemGroup>
+
+</Project>

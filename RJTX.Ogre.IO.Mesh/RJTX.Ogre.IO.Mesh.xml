@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RJTX.Ogre.IO.Mesh</name>
+    </assembly>
+    <members>
+        <member name="T:RJTX.Ogre.IO.Mesh.Components.Loader">
+            <summary>
+            An implementation of <see cref="T:RJTX.Ogre.IO.Mesh.Interfaces.IMeshLoader"/> for loading <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> objects from Ogre XML.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.IO.Mesh.Components.Loader.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:RJTX.Ogre.IO.Mesh.Components.Loader"/>.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.IO.Mesh.Components.Loader.Load(System.String)">
+            <summary>
+            Load a <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> from the given file path.
+            </summary>
+            <param name="filename">The path to the xml file containing the mesh xml.</param>
+        </member>
+        <member name="T:RJTX.Ogre.IO.Mesh.Components.SharedVertConverter">
+            <summary>
+            Class used to convert from a <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> with shared verticies, to a <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> without shared verticies.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.IO.Mesh.Components.SharedVertConverter.Convert(RJTX.Ogre.Models.Mesh.Mesh)">
+            <summary>
+            Method to take a <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> object with shared verticies and create a new <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> that does not used shared verticies.
+            </summary>
+        </member>
+        <member name="T:RJTX.Ogre.IO.Mesh.Components.Writer">
+            <summary>
+            An implementation of <see cref="T:RJTX.Ogre.IO.Mesh.Interfaces.IMeshWriter"/> for writing <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> objects to Ogre XML.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.IO.Mesh.Components.Writer.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:RJTX.Ogre.IO.Mesh.Components.Writer"/>.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.IO.Mesh.Components.Writer.Write(RJTX.Ogre.Models.Mesh.Mesh,System.String)">
+            <summary>
+            Write the given <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> to the given file path.
+            </summary>
+        </member>
+        <member name="T:RJTX.Ogre.IO.Mesh.Interfaces.IMeshLoader">
+            <summary>
+            Allows an object to handle loading <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> objects.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.IO.Mesh.Interfaces.IMeshLoader.Load(System.String)">
+            <summary>
+            Load a <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> from the given file path.
+            </summary>
+        </member>
+        <member name="T:RJTX.Ogre.IO.Mesh.Interfaces.IMeshWriter">
+            <summary>
+            Allows an object to handle writing <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> objects.
+            </summary>
+        </member>
+        <member name="M:RJTX.Ogre.IO.Mesh.Interfaces.IMeshWriter.Write(RJTX.Ogre.Models.Mesh.Mesh,System.String)">
+            <summary>
+            Write the given <see cref="T:RJTX.Ogre.Models.Mesh.Mesh"/> to the given file path.
+            </summary>
+        </member>
+    </members>
+</doc>
