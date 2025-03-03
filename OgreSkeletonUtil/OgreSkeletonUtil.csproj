@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Copyright>Rob James</Copyright>
     <PackageProjectUrl>https://github.com/RobJames-Texas/OgreSkeletonUtil</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RobJames-Texas/OgreSkeletonUtil</RepositoryUrl>
@@ -12,10 +11,8 @@
     <PackageReleaseNotes>Scientific notion can now be parsed for vector.
 Updated build script.</PackageReleaseNotes>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\RJTX.Ogre.IO.Skeleton\RJTX.Ogre.IO.Skeleton.csproj" />
     <ProjectReference Include="..\RJTX.Ogre.Models\RJTX.Ogre.Models.csproj" />
   </ItemGroup>
-
 </Project>
