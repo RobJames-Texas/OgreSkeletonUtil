@@ -11,7 +11,7 @@
     /// </summary>
     public class Writer : IMeshWriter
     {
-        private XmlSerializer _serializer;
+        private readonly XmlSerializer _serializer;
 
         /// <summary>
         /// Initializes a new instance of <see cref="Writer"/>.

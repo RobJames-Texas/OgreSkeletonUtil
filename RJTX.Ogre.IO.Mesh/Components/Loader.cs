@@ -12,7 +12,7 @@
     /// </summary>
     public class Loader : IMeshLoader
     {
-        private XmlSerializer _serializer;
+        private readonly XmlSerializer _serializer;
 
         /// <summary>
         /// Initializes a new instance of <see cref="Loader"/>.
@@ -25,8 +25,8 @@
 
             _serializer = new XmlSerializer(typeof(Mesh), xRoot);
 
-            _serializer.UnknownNode += new XmlNodeEventHandler(serializer_UnknownNode);
-            _serializer.UnknownAttribute += new XmlAttributeEventHandler(serializer_UnknownAttribute);
+            _serializer.UnknownNode += new XmlNodeEventHandler(Serializer_UnknownNode);
+            _serializer.UnknownAttribute += new XmlAttributeEventHandler(Serializer_UnknownAttribute);
         }
 
         /// <summary>
@@ -49,12 +49,12 @@
             return mesh;
         }
 
-        private void serializer_UnknownNode(object sender, XmlNodeEventArgs e)
+        private static void Serializer_UnknownNode(object sender, XmlNodeEventArgs e)
         {
             Console.WriteLine($"Unknown Node:{e.Name}\t{e.Text}");
         }
 
-        private void serializer_UnknownAttribute(object sender, XmlAttributeEventArgs e)
+        private static void Serializer_UnknownAttribute(object sender, XmlAttributeEventArgs e)
         {
             XmlAttribute attr = e.Attr;
             Console.WriteLine($"Unknown attribute {attr.Name}='{attr.Value}'");

@@ -49,7 +49,7 @@ v1.0.0
 
 Releases: <https://github.com/RobJames-Texas/OgreSkeletonUtil/releases>
 
-Written in dot net core 3.0 with Visual Studio 2019. The libraries use dot net standard 2.0. I did that so I can make NuGet packages that are compatible with dot net framework.
+Written in dot net 8.0 with Visual Studio 2022. The libraries use dot net standard 2.0. I did that so I could make NuGet packages that are compatible with dot net framework.
 
 ## Usage
 

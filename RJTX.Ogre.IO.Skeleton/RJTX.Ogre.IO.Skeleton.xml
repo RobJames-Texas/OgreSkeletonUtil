@@ -6,7 +6,7 @@
     <members>
         <member name="T:RJTX.Ogre.IO.Skeleton.Components.Loader">
             <summary>
-            An implementation of <see cref="T:RJTX.Ogre.IO.Skeleton.Interfaces.ISkeletonLoader"/> for loadking <see cref="T:RJTX.Ogre.Models.Skeleton.Skeleton"/> objects from Ogre XML.
+            An implementation of <see cref="T:RJTX.Ogre.IO.Skeleton.Interfaces.ISkeletonLoader"/> for loading <see cref="T:RJTX.Ogre.Models.Skeleton.Skeleton"/> objects from Ogre XML.
             </summary>
         </member>
         <member name="M:RJTX.Ogre.IO.Skeleton.Components.Loader.#ctor">

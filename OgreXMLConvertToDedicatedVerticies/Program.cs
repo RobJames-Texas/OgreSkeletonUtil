@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace OgreXMLConvertToDedicatedVerticies
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
@@ -14,12 +14,12 @@ namespace OgreXMLConvertToDedicatedVerticies
 
             if (!File.Exists(filename))
             {
-                Console.WriteLine("\n\nFile does not exist.\n\nThe only command line argument must be the mesh xml to convert\n\n Press any key to exit.\n\n");
+                Console.WriteLine("\n\nFile does not exist.\n\nThe only command line argument must be the mesh XML to convert\n\n Press any key to exit.\n\n");
                 Console.ReadKey();
                 return;
             }
 
-            Console.WriteLine("\n\nFile detected.\n\nBegin parsing mesh xml.\n\nCtrl-C to exit.\n\n");
+            Console.WriteLine("\n\nFile detected.\n\nBegin parsing mesh XML.\n\nCtrl-C to exit.\n\n");
 
             Loader loader = new Loader();
             Mesh mesh = loader.Load(filename);
@@ -30,12 +30,12 @@ namespace OgreXMLConvertToDedicatedVerticies
             }
             if (mesh.SubMeshes.Length > 1)
             {
-                throw new ArgumentException("Currently only mesh files with a single submesh are supported.");
+                throw new ArgumentException("Currently only mesh files with a single sub-mesh are supported.");
             }
 
             Mesh dedicatedMesh = SharedVertConverter.Convert(mesh);
 
-            Console.WriteLine("Press any key to convert your mesh xml to a dedicated verticies version.");
+            Console.WriteLine("Press any key to convert your mesh XML to a dedicated verticies version.");
             Console.ReadKey();
 
             // First backup the old file.
@@ -46,7 +46,7 @@ namespace OgreXMLConvertToDedicatedVerticies
                 ConsoleKey response;
                 do
                 {
-                    Console.WriteLine("Backupfile already exists.");
+                    Console.WriteLine("Backup file already exists.");
                     Console.WriteLine("\tSkip making backup? (S)");
                     Console.WriteLine("\tOverwrite the existing backup? (O)");
                     Console.WriteLine("\tExit the application? (E)");

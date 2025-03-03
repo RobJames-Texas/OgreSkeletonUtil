@@ -8,11 +8,11 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// An implementation of <see cref="ISkeletonLoader"/> for loadking <see cref="Skeleton"/> objects from Ogre XML.
+    /// An implementation of <see cref="ISkeletonLoader"/> for loading <see cref="Skeleton"/> objects from Ogre XML.
     /// </summary>
     public class Loader : ISkeletonLoader
     {
-        private XmlSerializer _serializer;
+        private readonly XmlSerializer _serializer;
 
         /// <summary>
         /// Initializes a new instance of <see cref="Loader"/>.
@@ -29,9 +29,9 @@
             // nodes or attributes, handles them with the   
             // UnknownNode and UnknownAttribute events.  
             _serializer.UnknownNode += new
-            XmlNodeEventHandler(serializer_UnknownNode);
+            XmlNodeEventHandler(Serializer_UnknownNode);
             _serializer.UnknownAttribute += new
-            XmlAttributeEventHandler(serializer_UnknownAttribute);
+            XmlAttributeEventHandler(Serializer_UnknownAttribute);
         }
 
         /// <summary>
@@ -45,21 +45,21 @@
             {
                 XmlReader reader = new XmlTextReader(fs);
                 if (_serializer.CanDeserialize(reader))
-                skeleton = (Skeleton)_serializer.Deserialize(reader);
+                {
+                    skeleton = (Skeleton)_serializer.Deserialize(reader);
+                }
             }
             return skeleton;
         }
 
-        private void serializer_UnknownNode
-        (object sender, XmlNodeEventArgs e)
+        private static void Serializer_UnknownNode(object sender, XmlNodeEventArgs e)
         {
             Console.WriteLine("Unknown Node:" + e.Name + "\t" + e.Text);
         }
 
-        private void serializer_UnknownAttribute
-        (object sender, XmlAttributeEventArgs e)
+        private static void Serializer_UnknownAttribute(object sender, XmlAttributeEventArgs e)
         {
-            System.Xml.XmlAttribute attr = e.Attr;
+            XmlAttribute attr = e.Attr;
             Console.WriteLine("Unknown attribute " +
             attr.Name + "='" + attr.Value + "'");
         }

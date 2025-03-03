@@ -14,7 +14,7 @@
     {
         private const string extension = "SKELETON";
 
-        private XmlSerializer _serializer;
+        private readonly XmlSerializer _serializer;
 
         /// <summary>
         /// Initializes a new instance of <see cref="Writer"/>.

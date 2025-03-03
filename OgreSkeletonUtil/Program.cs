@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace OgreSkeletonUtil
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
@@ -14,12 +14,12 @@ namespace OgreSkeletonUtil
 
             if (!File.Exists(filename))
             {
-                Console.WriteLine("\n\nFile does not exist.\n\nThe only command line argument must be the skeleton xml to convert\n\n Press any key to exit.\n\n");
+                Console.WriteLine("\n\nFile does not exist.\n\nThe only command line argument must be the skeleton XML to convert\n\n Press any key to exit.\n\n");
                 Console.ReadKey();
                 return;
             }
 
-            Console.WriteLine("\n\nFile detected.\n\nBegin parsing skeleton xml.\n\nCtrl-C to exit.\n\n");
+            Console.WriteLine("\n\nFile detected.\n\nBegin parsing skeleton XML.\n\nCtrl-C to exit.\n\n");
 
             string path = Path.GetDirectoryName(filename);
 
@@ -29,7 +29,7 @@ namespace OgreSkeletonUtil
             Skeleton[] seperated = Splitter.Split(skeleton).ToArray();
 
             Console.WriteLine($"Skeleton count: {seperated.Count()}");
-            Console.WriteLine("Press any key to write a separate skeleton xml for each animation.");
+            Console.WriteLine("Press any key to write a separate skeleton XML for each animation.");
             Console.ReadKey();
 
             Writer writer = new Writer();
@@ -49,7 +49,7 @@ namespace OgreSkeletonUtil
                 return;
             } 
 
-            Console.WriteLine("Finished writing skeleton xml. Press any key to exit.");
+            Console.WriteLine("Finished writing skeleton XML. Press any key to exit.");
             Console.ReadKey();
         }
     }

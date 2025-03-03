@@ -1,7 +1,6 @@
 ﻿namespace RJTX.Ogre.IO.Mesh.Components
 {
     using RJTX.Ogre.Models.Mesh;
-    using System.Linq;
 
     /// <summary>
     /// Class used to convert from a <see cref="Mesh"/> with shared verticies, to a <see cref="Mesh"/> without shared verticies.
@@ -18,7 +17,7 @@
                 SkeletonLink = shared.SkeletonLink,
                 SubMeshes = new SubMesh[] 
                 {
-                    ConvertSubMesh(shared.SubMeshes.First(), shared.SharedGeometry, shared.BoneAssignments)
+                    ConvertSubMesh(shared.SubMeshes[0], shared.SharedGeometry, shared.BoneAssignments)
                 }
             };
 

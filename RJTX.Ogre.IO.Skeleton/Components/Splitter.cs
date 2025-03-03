@@ -32,6 +32,6 @@
             }
         }
 
-        private static Animation Bind = new Animation() { Name = "Bind", Length = 0, Tracks = new Track[0] };
+        private static readonly Animation Bind = new Animation() { Name = "Bind", Length = 0, Tracks = [] };
     }
 }
