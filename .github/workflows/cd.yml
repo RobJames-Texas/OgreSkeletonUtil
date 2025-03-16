@@ -29,6 +29,10 @@ jobs:
       run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r win-x86 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
     - name: PublishSkeletonToolWinX86
       run: dotnet publish OgreSkeletonUtil -c release -r win-x86 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+    - name: PublishMeshToolLinux
+      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r linux-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
+    - name: PublishSkeletonToolLinux
+      run: dotnet publish OgreSkeletonUtil -c release -r linux-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
     - name: PublishMeshToolOSX
       run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r osx-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
     - name: PublishSkeletonToolOSX
@@ -64,6 +68,15 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: .\Artifacts\RJTX-Ogre-Tools-x86.zip
         asset_name: RJTX-Ogre-Tools-x86.zip
+        asset_content_type: application/zip
+    - name: Upload Release Asset (Linux)
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: .\Artifacts\RJTX-Ogre-Tools-linux.zip
+        asset_name: RJTX-Ogre-Tools-linux.zip
         asset_content_type: application/zip
     - name: Upload Release Asset (osx)
       uses: actions/upload-release-asset@v1
