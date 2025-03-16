@@ -22,17 +22,17 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: PublishMeshToolWinX64
-      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r win10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r win-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
     - name: PublishSkeletonToolWinX64
-      run: dotnet publish OgreSkeletonUtil -c release -r win10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+      run: dotnet publish OgreSkeletonUtil -c release -r win-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
     - name: PublishMeshToolWinX86
-      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r win10-x86 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r win-x86 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
     - name: PublishSkeletonToolWinX86
-      run: dotnet publish OgreSkeletonUtil -c release -r win10-x86 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+      run: dotnet publish OgreSkeletonUtil -c release -r win-x86 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
     - name: PublishMeshToolOSX
-      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r osx.10.10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
+      run: dotnet publish OgreXMLConvertToDedicatedVerticies -c release -r osx-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
     - name: PublishSkeletonToolOSX
-      run: dotnet publish OgreSkeletonUtil -c release -r osx.10.10-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
+      run: dotnet publish OgreSkeletonUtil -c release -r osx-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true
     - name: Build Artifact
       shell: powershell
       run: .\ArtifactBuild.ps1
